@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+*a{
+  text-decoration: none;
+}
+
+.dark-panel.p-panel {
+  .p-panel-titlebar {
+      background: #212121;
+  }
+}
