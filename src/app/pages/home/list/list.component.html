@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="card" *ngFor="let character of characters">
+    <p-card
+      [header]="
+        character.name
+          ? character.name.length > 18
+            ? character.name.slice(0, 18) + '...'
+            : character.name
+          : '-'
+      "
+      styleClass="p-card-shadow"
+    >
+      <ng-template pTemplate="subheader">
+        <p-tag
+          styleClass="p-mt-2"
+          [value]="character.status ? character.status : ''"
+          [severity]="
+            character.status === 'Alive'
+              ? 'success'
+              : character.status === 'Dead'
+              ? 'danger'
+              : character.status === 'unknown'
+              ? 'warning'
+              : ''
+          "
+        ></p-tag>
+        <p-tag styleClass="p-ml-2" [value]="character.species!"></p-tag>
+      </ng-template>
+
+      <ng-template pTemplate="header">
+        <img alt="Card" [src]="character.image" />
+      </ng-template>
+      <p>
+        <i class="pi pi-map-marker"></i>
+        {{ character.location ? character.location.name : "" }}
+      </p>
+    </p-card>
+  </div>
+</div>

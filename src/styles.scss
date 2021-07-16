@@ -1,9 +1,30 @@
-*a{
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: benton-sans, 'Helvetica Neue', helvetica, arial, sans-serif; */
+  /* font-family: "Lucida Console", Courier, monospace; */
+  font-family: Arial, Helvetica, sans-serif;
+  /* font-size: 13px; */
+}
+
+* button:focus,
+li:focus,
+div:focus {
+  outline: none;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+*a {
   text-decoration: none;
 }
 
 .dark-panel.p-panel {
   .p-panel-titlebar {
-      background: #212121;
+    background: #212121;
   }
 }

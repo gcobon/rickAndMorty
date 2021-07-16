@@ -1,3 +1,10 @@
-<nav class="navbar">
-  <p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu>
-</nav>
+<div class="container">
+  <div class="navbar">
+    <p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu>
+  </div>
+  <div class="layout">
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
