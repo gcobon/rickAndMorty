@@ -12,8 +12,17 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import {DividerModule} from 'primeng/divider';
 
-const ngPrimeModules = [TabMenuModule, CardModule, ButtonModule, TagModule];
+const ngPrimeModules = [
+  TabMenuModule,
+  CardModule,
+  ButtonModule,
+  TagModule,
+  ProgressSpinnerModule,
+  DividerModule
+];
 
 @NgModule({
   declarations: [

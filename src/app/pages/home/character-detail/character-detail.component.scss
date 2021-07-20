@@ -19,6 +19,7 @@
       width: 40rem;
       padding: 60px;
       border-radius: 50%;
+
       img {
         width: 300px;
         height: 300px;
@@ -29,11 +30,70 @@
 
     .character-info{
       display: flex;
+      width: 100%;
       flex-direction: column;
       padding: 20px;
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px;
       background-color: #f0f2f5;
+
+      .p-text-bold{
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px){
+  .container{
+    .content{
+     flex: auto;
+     flex-direction: column;
+     margin: 0 60px;
+
+     .img{
+      width: auto;
+      padding: 25px;
+      border-radius: 50%;
+
+      img{
+        width: 250px;
+        height: 250px;
+      }
+     }
+
+     .character-info{
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+     }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px){
+  .container{
+    .content{
+     flex: auto;
+     flex-direction: column;
+     margin: 0;
+
+     .img{
+      width: auto;
+      padding: 15px 0;
+      border-radius: 50%;
+
+      img{
+        width: 200px;
+        height: 200px;
+      }
+     }
+
+     .character-info{
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+     }
     }
   }
 }

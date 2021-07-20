@@ -1,14 +1,51 @@
 <div class="container">
-  <div class="content">
+  <ng-container *ngIf="!character">
+    <p-progressSpinner></p-progressSpinner>
+  </ng-container>
+
+  <div class="content" *ngIf="character">
     <div class="img">
       <img [src]="character?.image" alt="avatar" />
     </div>
     <div class="character-info">
-      <p>asdfasdf</p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, numquam
-      rerum deleniti iusto enim maxime aliquam inventore officia? Expedita cum
-      enim veniam natus repellat similique exercitationem distinctio quia
-      provident porro!
+      <div class="p-text-bold">{{ character.name }}</div>
+      <p-divider></p-divider>
+      <div class="p-mb-3">
+        <h4 style="font-weight: bold">Status</h4>
+        <div class="p-mt-1">
+          {{ character.status }}
+        </div>
+      </div>
+      <div class="p-mb-3">
+        <h4 style="font-weight: bold">Species</h4>
+        <div class="p-mt-1">
+          {{ character.species }}
+        </div>
+      </div>
+      <div class="p-mb-3">
+        <h4 style="font-weight: bold">Gender</h4>
+        <div class="p-mt-1">
+          {{ character.gender }}
+        </div>
+      </div>
+      <div class="p-mb-3">
+        <h4 style="font-weight: bold">Episodes</h4>
+        <div class="p-mt-1">
+          {{ episodes }}
+        </div>
+      </div>
+      <div class="p-mb-3">
+        <h4 style="font-weight: bold">Origin</h4>
+        <div class="p-mt-1">
+          {{ character.origin?.name }}
+        </div>
+      </div>
+      <div class="p-mb-3">
+        <h4 style="font-weight: bold">Location</h4>
+        <div class="p-mt-1">
+          {{ character.location?.name }}
+        </div>
+      </div>
     </div>
   </div>
 </div>

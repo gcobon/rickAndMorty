@@ -10,6 +10,7 @@ import { GlobalService } from 'src/app/shared/services/global.service';
 })
 export class CharacterDetailComponent implements OnInit {
   public character!: Character | undefined;
+  public episodes!: string |undefined;
   constructor(
     private ruta: ActivatedRoute,
     private globalService: GlobalService
@@ -23,5 +24,6 @@ export class CharacterDetailComponent implements OnInit {
     const id: number = this.ruta.snapshot.params.id;
 
     this.character = await this.globalService.getCharacterById(Number(id));
+    this.episodes = this.character?.episode?.length.toString();
   }
 }
