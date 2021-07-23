@@ -29,7 +29,17 @@ div:focus {
   }
 }
 
-
-.p-card-title:hover{
+.p-card-title:hover {
   color: orange;
+}
+
+.overlay {
+  position: fixed;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: rgba(74, 74, 74, 0.8);
+  z-index: 2000 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

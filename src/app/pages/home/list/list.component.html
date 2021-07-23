@@ -3,8 +3,8 @@
     <p-card
       [header]="
         character.name
-          ? character.name.length > 18
-            ? character.name.slice(0, 18) + '...'
+          ? character.name.length > 13
+            ? character.name.slice(0, 13) + '...'
             : character.name
           : '-'
       "
@@ -50,10 +50,10 @@
     </p-card>
   </div>
 
-  <div class="row prev">
-    <i class="pi pi-arrow-circle-left"></i>
+  <div class="row prev" *ngIf="result?.info?.prev" (click)="prev()">
+    <i class="pi pi-arrow-left"></i>
   </div>
-  <div class="row next">
-    <i class="pi pi-arrow-circle-right"></i>
+  <div class="row next" *ngIf="result?.info?.next" (click)="next()">
+    <i class="pi pi-arrow-right"></i>
   </div>
 </div>

@@ -13,7 +13,7 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import {DividerModule} from 'primeng/divider';
+import { DividerModule } from 'primeng/divider';
 
 const ngPrimeModules = [
   TabMenuModule,
@@ -21,7 +21,7 @@ const ngPrimeModules = [
   ButtonModule,
   TagModule,
   ProgressSpinnerModule,
-  DividerModule
+  DividerModule,
 ];
 
 @NgModule({

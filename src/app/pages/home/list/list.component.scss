@@ -7,23 +7,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 0px;
+  top: 50%;
   right: 0;
-  width: 60px;
-  height: 100%;
-  background-color: red;
+  width: 70px;
+  height: 4rem;
   font-size: 10rem;
   font-weight: 500;
-
-  i{
+  opacity: 0.4;
+  color: var(--primary-color);
+  background-color: rgba(142, 142, 143, 0.3);
+  i {
     font-size: 2.5rem;
+    font-weight: bold;
   }
+}
+
+.row:hover {
+  opacity: 0.9;
+  cursor: pointer;
+  background-color: rgba(142, 142, 143, 0.7);
 }
 
 .prev {
   left: 0;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
 }
 
 .next {
   right: 0;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .row {
+    top: 75%;
+  }
 }

@@ -1,5 +1,6 @@
+import { tap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
-import { Character } from 'src/app/shared/models/result.interface';
+import { Character, Result } from 'src/app/shared/models/result.interface';
 import { GlobalService } from 'src/app/shared/services/global.service';
 
 @Component({
@@ -8,15 +9,37 @@ import { GlobalService } from 'src/app/shared/services/global.service';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  public characters!: Character[] | undefined;
+  public result!: Result;
+  public characters!: Character[];
+  public page!: number;
 
   constructor(private globalService: GlobalService) {}
 
   ngOnInit(): void {
-    this.onGetCharacters();
+    this.subsPage();
+  }
+
+  subsPage(): void {
+    this.globalService.page$
+      .pipe(
+        tap(async (value) => {
+          this.page = value.page;
+          await this.onGetCharacters();
+        })
+      )
+      .subscribe();
   }
 
   async onGetCharacters(): Promise<void> {
-    this.characters = await this.globalService.getAllCharacters();
+    this.result = await this.globalService.getAllCharacters(this.page);
+    this.characters = this.result.results!;
+  }
+
+  prev(): void {
+    this.globalService.prevPage();
+  }
+
+  next(): void {
+    this.globalService.nextPage();
   }
 }

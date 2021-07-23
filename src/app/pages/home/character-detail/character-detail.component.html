@@ -1,8 +1,4 @@
 <div class="container">
-  <ng-container *ngIf="!character">
-    <p-progressSpinner></p-progressSpinner>
-  </ng-container>
-
   <div class="content" *ngIf="character">
     <div class="img">
       <img [src]="character?.image" alt="avatar" />
