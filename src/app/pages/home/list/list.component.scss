@@ -1,8 +1,22 @@
-.card:hover {
-  transform: scale(1.05);
+.breadcrumb {
+  background-color: var(--gray-700);
+  padding: 5px;
+  margin: 0;
+  color: var(--primary-color);
+  border-radius: 5px;
+
+  div {
+    i {
+      cursor: pointer;
+    }
+  }
 }
 
-.row {
+.g-card:hover {
+  transform: scale(1.02);
+}
+
+.arrow {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -22,7 +36,7 @@
   }
 }
 
-.row:hover {
+.arrow:hover {
   opacity: 0.9;
   cursor: pointer;
   background-color: rgba(142, 142, 143, 0.7);
@@ -41,7 +55,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .row {
+  .arrow {
     top: 75%;
   }
 }

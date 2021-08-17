@@ -1,5 +1,12 @@
-<div class="p-grid">
-  <div class="p-col-12 p-md-3 p-lg-2 card" *ngFor="let character of characters">
+<div class="grid mb-2 breadcrumb">
+  <div class="col-12">
+    <i class="pi pi-home" (click)="onResetPages()"></i>
+    <span> / Character / Page / {{ page }}</span>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col-2 md-3 lg-2 g-card" *ngFor="let character of characters">
     <p-card
       [header]="
         character.name
@@ -8,15 +15,22 @@
             : character.name
           : '-'
       "
-      styleClass="p-card-shadow"
+      styleClass="card-shadow"
     >
       <ng-template pTemplate="header">
-        <img alt="Card" [src]="character.image" />
+        <img alt="Card" [src]="character.image"/>
       </ng-template>
 
       <ng-template pTemplate="subheader">
         <p-tag
-          styleClass="p-mt-2"
+          styleClass="mt-2"
+          [icon]="
+            character.status === 'Alive'
+              ? 'pi pi-heart'
+              : character.status === 'unknown'
+              ? 'pi pi-exclamation-circle'
+              : 'pi pi-ban'
+          "
           [value]="character.status ? character.status : ''"
           [severity]="
             character.status === 'Alive'
@@ -29,7 +43,10 @@
           "
         ></p-tag>
         <p-tag
-          styleClass="p-ml-2"
+          styleClass="ml-2"
+          [icon]="
+            character.species === 'Human' ? 'pi pi-user' : 'pi pi-android'
+          "
           [value]="character.species!"
           severity="warning"
         ></p-tag>
@@ -43,17 +60,17 @@
           pButton
           icon="pi pi-eye"
           label="Detalles"
-          class="p-button-sm"
+          class="button-sm"
           [routerLink]="['/home/character', character.id]"
         ></button>
       </ng-template>
     </p-card>
   </div>
 
-  <div class="row prev" *ngIf="result?.info?.prev" (click)="prev()">
+  <div class="arrow prev" *ngIf="result?.info?.prev" (click)="prev()">
     <i class="pi pi-arrow-left"></i>
   </div>
-  <div class="row next" *ngIf="result?.info?.next" (click)="next()">
+  <div class="arrow next" *ngIf="result?.info?.next" (click)="next()">
     <i class="pi pi-arrow-right"></i>
   </div>
 </div>

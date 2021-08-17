@@ -1,0 +1,23 @@
+
+  img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    margin: 2em 0;
+    border: 2px solid #fff;
+}
+
+
+@media screen and (max-width: 876px ) {
+  img{
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 576px ) {
+  img{
+    width: 150px;
+    height: 150px;
+  }
+}

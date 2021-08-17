@@ -49,4 +49,8 @@ export class GlobalService {
   prevPage(): void {
     this.pageBS.next(this.pageBS.value - 1);
   }
+
+  resetPage(): void {
+    this.pageBS.next(1);
+  }
 }

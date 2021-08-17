@@ -42,4 +42,8 @@ export class ListComponent implements OnInit {
   next(): void {
     this.globalService.nextPage();
   }
+
+  onResetPages(): void {
+    this.globalService.resetPage();
+  }
 }
